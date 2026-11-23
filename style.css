@@ -2764,7 +2764,7 @@ h2 em {
 .floating-whatsapp {
     position: fixed;
     left: 25px;
-    top: 50%;
+    top: 90%;
     transform: translateY(-50%);
     z-index: 99999;
 

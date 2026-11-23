@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Custom Steel Gate",
     category: "Gates",
-    image: "assets/projects/gate.JPEG",
+    image: "assets/projects/gate.jpeg",
 
     description: "Custom metal gate project.",
 
@@ -24,7 +24,7 @@ const projects = [
   {
     title: "Steel Fabrication",
     category: "Fabrication",
-    image: "assets/projects/fabrication.PNG",
+    image: "assets/projects/fabrication.png",
 
 
     description: "Steel fabrication and metalwork.",
@@ -42,7 +42,7 @@ const projects = [
   {
     title: "Steel Structure",
     category: "Structures",
-    image: "assets/projects/structure.JPEG",
+    image: "assets/projects/structure.jpeg",
 
     description: "Steel structure project.",
 
@@ -59,7 +59,7 @@ const projects = [
   {
     title: "Metal Repair Work",
     category: "Repairs",
-    image: "assets/projects/fabrication2.PNG",
+    image: "assets/projects/fabrication2.png",
 
     description: "Metal repair and reinforcement work.",
 
