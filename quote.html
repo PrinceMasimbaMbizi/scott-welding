@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111"><title>Request a Quote | Scott Welding Projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.quote-page{min-height:calc(100vh - 150px);padding:65px 7%;background:linear-gradient(120deg,#111 0%,#1d1f22 100%)}
+.quote-wrap{max-width:760px;margin:auto;background:#191b1e;border:1px solid #34363a;padding:clamp(24px,5vw,52px)}
+.quote-wrap h1{font-size:clamp(42px,7vw,68px);margin:12px 0}
+.quote-wrap>p{color:#aaa;font-size:14px;margin-bottom:28px}
+.quote-form{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.quote-form .field{display:flex;flex-direction:column;gap:7px}
+.quote-form .full{grid-column:1/-1}
+.quote-form label{font-size:11px;font-weight:700;color:#ddd}
+.quote-form input,.quote-form select,.quote-form textarea{width:100%;background:#101112;border:1px solid #3b3d40;color:#fff;padding:14px;font:inherit;font-size:13px;outline:none;border-radius:0}
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus{border-color:#e21d2b}
+.quote-form textarea{resize:vertical}
+.quote-form button{justify-self:start}
+.back-link{display:inline-block;color:#ddd;font-size:12px;margin-bottom:25px}
+.back-link:hover{color:#e21d2b}
+@media(max-width:600px){.quote-page{padding:35px 5%}.quote-form{grid-template-columns:1fr}.quote-form .full{grid-column:auto}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="logo-slot"><img src="assets/images/logo.png" alt="Scott Welding Projects logo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"><span class="logo-fallback">ADD<br>LOGO</span></span><span class="brand-name">SCOTT <b>WELDING</b><small>PROJECTS</small></span></a>
+  <a class="btn btn-outline" href="index.html">Back to website</a>
+</header>
+<main class="quote-page">
+  <div class="quote-wrap">
+    <a class="back-link" href="index.html">← Back to Scott Welding Projects</a>
+    <div class="section-tag">REQUEST A QUOTATION</div>
+    <h1>LET'S DISCUSS<br><em>YOUR PROJECT.</em></h1>
+    <p>Complete the form below. It will open WhatsApp with your enquiry ready to send.</p>
+    <form class="quote-form" id="quoteForm">
+      <div class="field"><label for="name">Full name *</label><input id="name" required placeholder="Your full name"></div>
+      <div class="field"><label for="phone">Phone number *</label><input id="phone" type="tel" required placeholder="Your phone number"></div>
+      <div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com"></div>
+      <div class="field"><label for="service">Service required *</label><select id="service" required><option value="">Choose a service</option><option>Welding</option><option>Gate manufacturing</option><option>Steel fabrication</option><option>Carport / roofing</option><option>Steel structure</option><option>Metal repair</option><option>Other</option></select></div>
+      <div class="field full"><label for="location">Project location</label><input id="location" placeholder="Where is the work required?"></div>
+      <div class="field full"><label for="details">Project details *</label><textarea id="details" rows="5" required placeholder="Describe what you need. Include measurements or other useful details if available."></textarea></div>
+      <button class="btn btn-red full" type="submit">Prepare WhatsApp enquiry ↗</button>
+    </form>
+  </div>
+</main>
+<footer class="footer"><p>Scott Welding Projects · Built with precision. Welded with excellence.</p><span>© <span id="year"></span> Scott Welding Projects</span></footer>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+document.getElementById("quoteForm").addEventListener("submit",function(e){
+ e.preventDefault();
+ const name=document.getElementById("name").value.trim();
+ const phone=document.getElementById("phone").value.trim();
+ const email=document.getElementById("email").value.trim();
+ const service=document.getElementById("service").value;
+ const location=document.getElementById("location").value.trim();
+ const details=document.getElementById("details").value.trim();
+ const message=`Hello Scott Welding Projects,%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email||"Not provided")}%0AService: ${encodeURIComponent(service)}%0AProject location: ${encodeURIComponent(location||"Not provided")}%0A%0AProject details: ${encodeURIComponent(details)}`;
+ // Confirm this is the correct WhatsApp number before the website goes live.
+ window.open(`https://wa.me/27814512906?text=${message}`,"_blank");
+});
+</script>
+</body></html>
