@@ -24,7 +24,7 @@ const projects = [
   {
     title: "Steel Fabrication",
     category: "Fabrication",
-    image: "assets/projects/fabrication.png",
+    image: "assets/projects/Fabrication.png",
 
 
     description: "Steel fabrication and metalwork.",
